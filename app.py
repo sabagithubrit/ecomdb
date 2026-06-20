@@ -26,7 +26,7 @@ import os
 import uuid
 import razorpay
 client=razorpay.Client(auth=("rzp_test_SzvV4x3hbJuxJp","s6GpFtnc5wobLR04zGeChubz"))
-mydb=connection.MySQLConnection(user='root',host='localhost',password='saba',db='ecomdb')
+mydb=connection.MySQLConnection(user='flaskuser',host='localhost',password='password',db='ecomdb')
 app=Flask(__name__)
 app.wsgi_app=ProxyFix(app.wsgi_app,x_proto=1,x_host=1)
 app.permanent_session_lifetime=timedelta(days=1)
