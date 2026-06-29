@@ -1749,7 +1749,7 @@ def forgotpassword():
 
     if count_email[0] == 1:
 
-        reset_link = f"http://sabaecom.duckdns.org/api/resetpassword/{endata(f_email)}"
+        reset_link = f"https://sabaecom.duckdns.org/api/resetpassword/{endata(f_email)}"
 
         subject = "Reset Password Link"
         body = f"Click the link to reset password:\n{reset_link}"
