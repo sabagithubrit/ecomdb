@@ -609,6 +609,26 @@ def userlogin():
     finally:
         if cursor:
             cursor.close()
+
+@app.route('/api/user/logout', methods=['POST'])
+def userlogout():
+    try:
+        if 'userid' not in session:
+            return jsonify({'status':'failed','message':'Unauthorized access'}),401
+
+        session.clear()
+
+        return jsonify({
+            'status':'success',
+            'message':'Logout successful'
+        }),200
+
+    except Exception as e:
+        return jsonify({
+            'status':'failed',
+            'message':str(e)
+        }),500
+    
 @app.route('/api/cart/add', methods=['POST'])
 def addcart():
     cursor=None
